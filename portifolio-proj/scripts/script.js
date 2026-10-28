@@ -38,3 +38,22 @@ navLinks.forEach(link => {
     }
   });
 });
+
+// ==========================================
+// TELA DE CARREGAMENTO (PRELOADER)
+// ==========================================
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  
+  // Se o preloader existir na página, inicia o cronômetro para sumir
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+      
+      // Remove fisicamente o elemento após a animação de fade
+      setTimeout(() => {
+        preloader.remove();
+      }, 600);
+    }, 3000); // 3 segundos exibindo a animação de texto
+  }
+});
